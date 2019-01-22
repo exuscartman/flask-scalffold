@@ -1,0 +1,11 @@
+# Byte-compiled
+__pycache__/
+
+# virtualenv
+venv/
+
+# dotenv
+.env
+
+# vscode
+.vscode
