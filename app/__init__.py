@@ -1,6 +1,6 @@
 from flask import Flask
 import os
-from app import auth, api
+from app import auth, api, cli
 from app.database import db
 from app.extensions import jwt, migrate, celery
 from app.config import config
@@ -8,12 +8,13 @@ from app.config import config
 def create_app():
     """Application factory, used to create application
     """
-    app = Flask('fim_rate')
+    app = Flask('demo')
 
     configure_app(app)
     configure_db(app)
     configure_extensions(app)
     register_blueprints(app)
+    cli.register(app)
     init_celery(app)
 
     return app

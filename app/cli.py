@@ -5,12 +5,12 @@ import click
 def register(app):
     @app.cli.group()
     def setup():
-        """Main entry point"""
+        """Prepare database and data"""
         pass
 
 
     @setup.command()
-    def init():
+    def go():
         """Init application, create database tables 
         and create a new user named admin with password admin 
         """
